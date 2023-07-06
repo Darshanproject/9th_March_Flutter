@@ -38,6 +38,7 @@ class _EditDataState extends State<EditData> {
       body: ListView(
         children: [
           TextField(
+            controller: cname,
             decoration: InputDecoration(
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
@@ -46,6 +47,7 @@ class _EditDataState extends State<EditData> {
             ),
           ),
           TextField(
+            controller: cemail  ,
             decoration: InputDecoration(
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
@@ -63,7 +65,6 @@ class _EditDataState extends State<EditData> {
             },
             child: Text("Edit"),
           ),
-          
         ],
       ),
     );

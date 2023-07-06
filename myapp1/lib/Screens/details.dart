@@ -40,38 +40,35 @@ class _DetailsState extends State<Details> {
                           builder: (BuildContext context) => EditData(
                               list: widget.list, index: widget.index)));
                 }),
-            MaterialButton(
-                child: Text("Delete"),
-                onPressed: () {
-                  AlertDialog alertDialog = AlertDialog(
-                    content: Text("Are You Sure?"),
-                    actions: [
-                      MaterialButton(
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext context) => MyHome()));
-                          deletedata();
-                        },
-                        child: Text("OK"),
-                      ),
-                      MaterialButton(
-                        onPressed: () {},
-                        child: Text("Cancel"),
-                      )
-                    ],
-                  );
-                  showDialog(
-                      context: context, builder: (context) => alertDialog);
-                })
+            MaterialButton(child: Text("Delete"), onPressed: () => confirm())
           ],
         ),
       ),
     );
   }
 
+  confirm() {
+    AlertDialog alertDialog = AlertDialog(
+      content: Text("Are you Sure?"),
+      actions: [
+        MaterialButton(
+            child: Text("OK"),
+            onPressed: () {
+              deletedata();
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => MyHome()));
+            }),
+        MaterialButton(child: Text("CANCEL"), onPressed: () {})
+      ],
+    );
+
+    showDialog(context: context, builder: (context) => alertDialog);
+  }
+
   void deletedata() {
     var url = "https://database20810.000webhostapp.com/FlutterCrude/delete.php";
-
-    http.post(Uri.parse(url), body: {'id': widget.list[widget.index]['id']});
+    http.post(Uri.parse(url), body: {
+      'id': widget.list[widget.index]['id'],
+    });
   }
 }
