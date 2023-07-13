@@ -159,6 +159,7 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                         child: (isloading)
                             ? Center(
                                 child: Container(
+                                  color: Colors.amber,
                                   height: 26,
                                   width: 26,
                                   child: CircularProgressIndicator(
@@ -179,12 +180,12 @@ class _Reg_ScreenState extends State<Reg_Screen> {
                   GestureDetector(onTap: () {
                     Navigator.pushReplacementNamed(context, "Login");
                   }),
-                  // ElevatedButton(
-                  //     onPressed: () {
-                  //       Navigator.of(context).push(MaterialPageRoute(
-                  //           builder: (BuildContext context) => Login_Screen()));
-                  //     },
-                  //     child: Text("Sigin"))
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) => Login_Screen()));
+                      },
+                      child: Text("Sigin"))
                 ],
               ),
             ),
