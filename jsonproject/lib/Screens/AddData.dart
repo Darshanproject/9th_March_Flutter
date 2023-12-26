@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '../main1.dart';
+import '../main.dart';
 
 class AddData extends StatefulWidget {
   @override
@@ -51,7 +51,7 @@ class AddDataState extends State<AddData> {
   }
 
   void insertdata() {
-    var url = "https://database20810.000webhostapp.com/FlutterCrude/insert.php";
+    var url = "https://anujflutter.000webhostapp.com/Fluttercrud/insert.php";
     http.post(Uri.parse(url), body: {
       "name": name.text.toString(),
       "surname": surname.text.toString(),

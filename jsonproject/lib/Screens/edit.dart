@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:jsonproject/main1.dart';
+import 'package:jsonproject/main.dart';
 
 class EditData extends StatefulWidget {
   final List list;
